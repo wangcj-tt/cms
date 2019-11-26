@@ -45,7 +45,7 @@ public class CategoryController {
         return MessageUtil.success(category);
 
     }
-    @GetMapping("/update")
+    @PostMapping("/update")
     @ApiOperation("更新栏目信息")
     public Message updateCategory(Category category) {
         categoryService.saveOrUpdateCategory(category);

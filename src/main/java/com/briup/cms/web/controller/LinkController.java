@@ -45,7 +45,7 @@ public class LinkController {
         return MessageUtil.success(link);
     }
 
-    @GetMapping("/update")
+    @PostMapping("/update")
     @ApiOperation("更新链接")
 
     public Message updateLink(Link link) {
