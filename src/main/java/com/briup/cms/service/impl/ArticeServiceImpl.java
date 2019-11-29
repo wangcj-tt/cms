@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
+import java.util.List;
 
 @Service
 public class ArticeServiceImpl  implements IArticleService {
@@ -22,5 +23,23 @@ public class ArticeServiceImpl  implements IArticleService {
         article.setClickTimes(0);
         article.setPublishDate(new Date());
         articleDao.save(article);
+    }
+
+    @Override
+    public void deleteArticleById(int id) throws CustomerException {
+        articleDao.deleteById(id);
+    }
+
+    @Override
+    public Article queryArticleById(int id) throws CustomerException {
+
+        return articleDao.queryById(id);
+    }
+
+    @Override
+    public List<Article> queryAll() throws CustomerException {
+
+
+        return  articleDao.findAll();
     }
 }
